@@ -7,10 +7,10 @@ const {
 } = require('./db/mongoose');
 const {
   Todo
-} = require('./models/Todo');
+} = require('./models/todo');
 const {
   User
-} = require('./models/User');
+} = require('./models/user');
 
 connectMongoose();
 const app = express();
@@ -18,7 +18,6 @@ const app = express();
 app.use(bodyParser.json());
 
 app.post('/todos',(req, res) => {
-  console.log(req.body);
   const todo = new Todo({
     text: req.body.text
   })
@@ -34,6 +33,7 @@ app.listen(3000, () => {
   console.log(`Listening on port 3000`);
 })
 
+module.exports.app = app;
 
 
 

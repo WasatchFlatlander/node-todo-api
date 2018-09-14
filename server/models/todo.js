@@ -18,4 +18,4 @@ const Todo = mongoose.model('Todo', {
   }
 });
 
-module.exports.Todo = Todo;
+module.exports = {Todo};
