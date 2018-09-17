@@ -108,7 +108,7 @@ describe('GET /todos/:id', () => {
       .end(done);
   });
 
-  it('should return 400 if todo not found', (done) => {
+  it('should return 400 for non-object ids', (done) => {
     const id = '5b9c2234571fcb0781f113a4234234123413411432';
     request(app)
       .get(`/todos/${id}`)

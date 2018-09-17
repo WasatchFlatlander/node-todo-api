@@ -4,7 +4,7 @@ connectMongoose();
 
 
 function connectMongoose() {
-  mongoose.connect('mongodb://localhost:27017/TodoApp', {
+  mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/TodoApp', {
     useNewUrlParser: true
   }).then((res) => {
     console.log('Successfully connected to Mongoose');
